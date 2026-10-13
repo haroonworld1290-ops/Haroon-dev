@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name – Freelance Web Developer</title>
+<title>Haroon – Freelance Web Developer</title>
 <meta name="description" content="Freelance web developer building fast, mobile-friendly websites and web apps for businesses. Get a free quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -94,6 +94,23 @@ nav a:hover{color:var(--ink)}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .tags span{font-size:.8rem;background:var(--soft);padding:3px 10px;border-radius:99px}
 
+
+/* pricing */
+.cur{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;margin-top:18px;background:var(--surface)}
+.cur button{border:0;background:transparent;color:var(--ink);padding:9px 20px;font:600 .95rem var(--body);cursor:pointer}
+.cur button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px;align-items:stretch}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;position:relative}
+.plan.pop{border:2px solid var(--brand)}
+.plan .badge{position:absolute;top:-13px;left:24px;background:var(--brand);color:var(--brand-ink);font:600 .82rem var(--body);padding:3px 12px;border-radius:99px}
+.price{font:800 2.2rem var(--head);margin:6px 0 2px}
+.plan .sub{color:var(--muted);font-size:.93rem;margin-bottom:18px}
+.plan ul{list-style:none;padding:0;margin:0 0 24px;font-size:.96rem}
+.plan li{padding-left:22px;position:relative;margin-bottom:6px}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.plan .btn{margin-top:auto;justify-content:center}
+.note{margin-top:22px;color:var(--muted);font-size:.93rem}
+
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
@@ -127,11 +144,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top">Your<span>Name</span>.dev</a>
+    <a class="logo" href="#top">Haroon<span>.dev</span></a>
     <nav aria-label="Main"><ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
     </ul></nav>
     <a class="btn small" href="#contact">Get a free quote</a>
@@ -219,11 +237,34 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </section>
 
-<section id="about">
+<section id="pricing">
+  <div class="wrap">
+    <h2>Plans and pricing</h2>
+    <p class="lead">Clear prices in Pakistani rupees or US dollars. Every plan includes a free consultation and a mobile-friendly design.</p>
+    <div class="cur" role="group" aria-label="Currency">
+      <button type="button" data-cur="PKR" aria-pressed="true">PKR (Rs)</button>
+      <button type="button" data-cur="USD" aria-pressed="false">USD ($)</button>
+    </div>
+    <div class="plans">
+      <article class="plan"><h3>Starter</h3><div class="price" data-pkr="30000" data-usd="110"></div><div class="sub">One-time payment</div>
+        <ul><li>One-page or 3-page website</li><li>Mobile responsive design</li><li>Contact form</li><li>Basic SEO setup</li><li>7 days delivery</li></ul>
+        <button class="btn ghost enroll" data-service="Business website" data-plan="Starter">Choose Starter</button></article>
+      <article class="plan pop"><span class="badge">Most popular</span><h3>Business</h3><div class="price" data-pkr="85000" data-usd="300"></div><div class="sub">One-time payment</div>
+        <ul><li>Up to 8 pages</li><li>Custom design</li><li>Speed and SEO optimization</li><li>WhatsApp and map integration</li><li>1 month free support</li><li>14 days delivery</li></ul>
+        <button class="btn enroll" data-service="Business website" data-plan="Business">Choose Business</button></article>
+      <article class="plan"><h3>Premium</h3><div class="price" data-pkr="200000" data-usd="700"></div><div class="sub">Starting price</div>
+        <ul><li>Online store or custom web app</li><li>Login, admin panel, database</li><li>Payment gateway setup</li><li>Advanced SEO and analytics</li><li>3 months free support</li><li>30+ days delivery</li></ul>
+        <button class="btn ghost enroll" data-service="Online store (E-commerce)" data-plan="Premium">Choose Premium</button></article>
+    </div>
+    <p class="note">Maintenance and support: <b class="mp" data-pkr="8000" data-usd="30"></b> per month. Final price depends on your exact requirements – send your details for a free quote. Payment: 50% to start, 50% on delivery.</p>
+  </div>
+</section>
+
+<section id="about" class="alt">
   <div class="wrap about">
     <div>
       <h2>About me</h2>
-      <p class="lead">Hi, I'm Your Name. I help small businesses and startups get a professional presence online. I focus on clean code, honest communication, and delivering on time.</p>
+      <p class="lead">Hi, I'm Haroon. I help small businesses and startups get a professional presence online. I focus on clean code, honest communication, and delivering on time.</p>
       <p class="lead" style="margin-top:14px">Every site I build is responsive, secure, and set up so Google can find it.</p>
     </div>
     <div>
@@ -233,13 +274,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </section>
 
-<section id="contact" class="alt">
+<section id="contact">
   <div class="wrap contact">
     <div class="info">
       <h2>Let's talk about your project</h2>
       <p>Fill in the form and I'll reply within 24 hours with questions and a free quote.</p>
-      <p>Email<br><a id="emailLink" href="#">hello@yourdomain.com</a></p>
-      <p>WhatsApp<br><a id="waLink" href="#">+92 300 0000000</a></p>
+      <p>Email<br><a id="emailLink" href="#">haroonworld1290@gmail.com</a></p>
+      <p>WhatsApp<br><a id="waLink" href="#">0326 7317291</a></p>
     </div>
     <form id="form" novalidate>
       <div class="row">
@@ -252,7 +293,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </fieldset>
       <div class="row">
         <div><label for="budget">Budget</label>
-          <select id="budget"><option>Not sure yet</option><option>Under $300</option><option>$300 – $1,000</option><option>$1,000 – $3,000</option><option>$3,000+</option></select></div>
+          <select id="budget"><option>Not sure yet</option><option>Under PKR 30,000 ($110)</option><option>PKR 30,000 – 85,000 ($110 – $300)</option><option>PKR 85,000 – 200,000 ($300 – $700)</option><option>PKR 200,000+ ($700+)</option></select></div>
         <div><label for="time">Timeline</label>
           <select id="time"><option>Flexible</option><option>Within 2 weeks</option><option>Within 1 month</option><option>1–3 months</option></select></div>
       </div>
@@ -267,17 +308,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> Your Name. All rights reserved.</span><span>Web development services</span></div></footer>
+<footer><div class="wrap"><span>© <span id="yr"></span> Haroon. All rights reserved.</span><span>Web development services</span></div></footer>
 
 <script>
 // ✏️ EDIT THESE DETAILS
-const CONFIG = { name: "Your Name", email: "hello@yourdomain.com", whatsapp: "923000000000" /* country code + number, no + or spaces */ };
+const CONFIG = { name: "Haroon", email: "haroonworld1290@gmail.com", whatsapp: "923267317291" /* country code + number, no + or spaces */, phone: "0326 7317291" };
 
 const SERVICES = ["Business website","Online store (E-commerce)","Custom web app","UI/UX design","SEO and speed optimization","Maintenance and support"];
 const $ = id => document.getElementById(id);
 $("yr").textContent = new Date().getFullYear();
 $("emailLink").href = "mailto:" + CONFIG.email; $("emailLink").textContent = CONFIG.email;
-$("waLink").href = "https://wa.me/" + CONFIG.whatsapp; $("waLink").textContent = "+" + CONFIG.whatsapp;
+$("waLink").href = "https://wa.me/" + CONFIG.whatsapp; $("waLink").textContent = CONFIG.phone;
 
 $("services-list").innerHTML = SERVICES.map(s => `<label><input type="checkbox" value="${s}"> ${s}</label>`).join("");
 
@@ -287,6 +328,18 @@ document.querySelectorAll(".enroll").forEach(b => b.addEventListener("click", ()
   $("contact").scrollIntoView({behavior:"smooth"});
   setTimeout(() => $("name").focus({preventScroll:true}), 500);
 }));
+
+
+// Pricing currency toggle
+function fmt(el,cur){ const v = +el.dataset[cur.toLowerCase()]; el.textContent = (cur === "PKR" ? "Rs " : "$") + v.toLocaleString("en-US"); }
+function setCur(cur){
+  document.querySelectorAll(".price,.mp").forEach(el => fmt(el,cur));
+  document.querySelectorAll(".cur button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cur === cur));
+}
+document.querySelectorAll(".cur button").forEach(b => b.addEventListener("click", () => setCur(b.dataset.cur)));
+setCur("PKR");
+let chosenPlan = "";
+document.querySelectorAll("[data-plan]").forEach(b => b.addEventListener("click", () => { chosenPlan = b.dataset.plan; }));
 
 function show(text, ok){ const m = $("msg"); m.textContent = text; m.className = "msg " + (ok ? "ok" : "err"); }
 
@@ -298,7 +351,7 @@ $("form").addEventListener("submit", e => {
   if (!/^\S+@\S+\.\S+$/.test(email)) return show("Please enter a valid email address.", false);
   if (!picked.length) return show("Please choose at least one service.", false);
 
-  const body = `Hi ${CONFIG.name},\n\nName: ${name}\nEmail: ${email}\nServices: ${picked.join(", ")}\nBudget: ${$("budget").value}\nTimeline: ${$("time").value}\n\nDetails:\n${$("details").value.trim() || "-"}`;
+  const body = `Hi ${CONFIG.name},\n\nName: ${name}\nEmail: ${email}\nServices: ${picked.join(", ")}\n${chosenPlan ? "Plan: " + chosenPlan + "\n" : ""}Budget: ${$("budget").value}\nTimeline: ${$("time").value}\n\nDetails:\n${$("details").value.trim() || "-"}`;
   if (e.submitter && e.submitter.value === "whatsapp") {
     window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(body), "_blank");
   } else {
