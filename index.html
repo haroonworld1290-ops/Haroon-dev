@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Freelance Web Developer</title>
+<meta name="description" content="Freelance web developer building fast, mobile-friendly websites and web apps for businesses. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#12202F; --muted:#56657A; --line:#D8DFE8;
+  --brand:#2F5BFF; --brand-ink:#fff; --ok:#13875F; --soft:#E8EEFF;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0E1621; --surface:#152233; --ink:#EAF0F7; --muted:#9AABC0; --line:#26384D; --brand:#6C8BFF; --brand-ink:#0E1621; --ok:#3CD19A; --soft:#1B2C45}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin-bottom:12px}
+h3{font-size:1.25rem;font-weight:700;margin-bottom:8px}
+section{padding:84px 0}
+.lead{color:var(--muted);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;border:2px solid var(--brand);background:var(--brand);color:var(--brand-ink);font:600 1rem var(--body);text-decoration:none;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.small{padding:8px 14px;font-size:.92rem}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 1.3rem var(--head);text-decoration:none}
+.logo span{color:var(--brand)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+@media(max-width:760px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.status{display:inline-flex;gap:8px;align-items:center;font-weight:500;font-size:.95rem;background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.hero p{margin:22px 0 30px;color:var(--muted);font-size:1.15rem;max-width:52ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap}
+.proof b{display:block;font:800 1.7rem var(--head)}
+.proof span{color:var(--muted);font-size:.92rem}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 50px -24px rgba(18,32,47,.35);overflow:hidden}
+.bar{display:flex;align-items:center;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.bar em{flex:1;margin-left:10px;font:normal .8rem var(--body);color:var(--muted);background:var(--bg);padding:3px 12px;border-radius:6px}
+.screen{padding:20px;display:grid;gap:12px}
+.sk{height:12px;border-radius:6px;background:var(--line)}
+.sk.h{height:26px;width:70%;background:var(--ink)}
+.sk.b{width:35%;height:30px;background:var(--brand);border-radius:8px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tiles div{height:74px;border-radius:10px;background:var(--soft)}
+.code{background:var(--ink);color:var(--bg);font:500 .82rem/1.7 ui-monospace,Consolas,monospace;padding:16px 20px}
+.code .k{color:#8FB0FF}.code .s{color:#7FE0B5}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:38px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.card p{color:var(--muted);margin-bottom:18px}
+.card ul{list-style:none;padding:0;margin:0 0 22px;font-size:.95rem}
+.card li{padding-left:22px;position:relative;margin-bottom:4px}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.card .btn{margin-top:auto;align-self:flex-start}
+
+/* process */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-top:38px;counter-reset:s}
+.step{border-top:3px solid var(--brand);padding-top:16px;counter-increment:s}
+.step h3::before{content:counter(s) ". ";color:var(--brand)}
+.step p{color:var(--muted);font-size:.97rem}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:38px}
+.proj{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.thumb{height:170px;display:grid;place-items:center;font:800 1.5rem var(--head);color:#fff}
+.t1{background:linear-gradient(135deg,#2F5BFF,#1B2F7A)}.t2{background:linear-gradient(135deg,#13875F,#0B4A35)}.t3{background:linear-gradient(135deg,#7A3FF2,#33176B)}
+.proj div.i{padding:20px}
+.proj p{color:var(--muted);font-size:.95rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tags span{font-size:.8rem;background:var(--soft);padding:3px 10px;border-radius:99px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skills span{border:1px solid var(--line);background:var(--surface);padding:6px 14px;border-radius:8px;font-weight:500;font-size:.95rem}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px}
+.info p{margin:18px 0;color:var(--muted)}
+.info a{font-weight:600;color:var(--ink)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label,legend{font-weight:600;font-size:.95rem;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:120px;resize:vertical}
+fieldset{border:0;padding:0}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.checks label{font-weight:400;display:flex;gap:8px;align-items:center;margin:0;cursor:pointer}
+.checks input{width:auto}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.msg{display:none;padding:12px 16px;border-radius:9px;font-weight:500}
+.msg.err{display:block;background:#FDE8E8;color:#9B1C1C}
+.msg.ok{display:block;background:#DDF5EA;color:#0B5B3F}
+@media(max-width:860px){.contact,.row,.checks{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Your<span>Name</span>.dev</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+    </ul></nav>
+    <a class="btn small" href="#contact">Get a free quote</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="status"><i></i> Taking new projects this month</div>
+      <h1>Websites that load fast, look sharp, and bring in customers.</h1>
+      <p>I'm a freelance web developer. I design and build business websites, online stores, and web apps – from first sketch to launch and ongoing support.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Start your project</a>
+        <a class="btn ghost" href="#services">See services</a>
+      </div>
+      <div class="proof">
+        <div><b>50+</b><span>Projects delivered</span></div>
+        <div><b>5 yrs</b><span>Professional experience</span></div>
+        <div><b>24 h</b><span>Reply time</span></div>
+      </div>
+    </div>
+    <div class="browser" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i><em>yourclient.com</em></div>
+      <div class="screen">
+        <div class="sk h"></div><div class="sk" style="width:90%"></div><div class="sk" style="width:60%"></div><div class="sk b"></div>
+        <div class="tiles"><div></div><div></div><div></div></div>
+      </div>
+      <div class="code"><span class="k">const</span> site = {<br>&nbsp;&nbsp;speed: <span class="s">"under 2 seconds"</span>,<br>&nbsp;&nbsp;mobile: <span class="s">"fully responsive"</span>,<br>&nbsp;&nbsp;seo: <span class="s">"built in"</span><br>};</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="lead">Pick what you need. Each service can be ordered alone or combined into one package.</p>
+    <div class="grid3">
+      <article class="card"><h3>Business website</h3><p>A clean, professional site that explains what you do and makes it easy to contact you.</p>
+        <ul><li>Up to 6 pages</li><li>Mobile friendly</li><li>Contact form and map</li></ul>
+        <button class="btn small enroll" data-service="Business website">Enroll in this service</button></article>
+      <article class="card"><h3>Online store</h3><p>Sell products online with a secure checkout and an easy way to manage orders.</p>
+        <ul><li>Product catalog and cart</li><li>Payment setup</li><li>Order management</li></ul>
+        <button class="btn small enroll" data-service="Online store (E-commerce)">Enroll in this service</button></article>
+      <article class="card"><h3>Web app development</h3><p>Custom dashboards, booking systems, portals, and tools built around your workflow.</p>
+        <ul><li>Login and user roles</li><li>Database and admin panel</li><li>API connections</li></ul>
+        <button class="btn small enroll" data-service="Custom web app">Enroll in this service</button></article>
+      <article class="card"><h3>UI/UX design</h3><p>Layouts and visual design that guide visitors toward the action you want them to take.</p>
+        <ul><li>Wireframes and mockups</li><li>Brand-matched styling</li><li>Mobile-first layouts</li></ul>
+        <button class="btn small enroll" data-service="UI/UX design">Enroll in this service</button></article>
+      <article class="card"><h3>SEO and speed</h3><p>Help people find your site on Google, and make sure it loads quickly once they do.</p>
+        <ul><li>Speed audit and fixes</li><li>On-page SEO</li><li>Analytics setup</li></ul>
+        <button class="btn small enroll" data-service="SEO and speed optimization">Enroll in this service</button></article>
+      <article class="card"><h3>Maintenance and support</h3><p>Keep your site updated, backed up, and secure so you can focus on your business.</p>
+        <ul><li>Monthly updates</li><li>Backups and security</li><li>Fast bug fixes</li></ul>
+        <button class="btn small enroll" data-service="Maintenance and support">Enroll in this service</button></article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>How we work together</h2>
+    <p class="lead">A clear process with no surprises, so you always know what happens next.</p>
+    <div class="steps">
+      <div class="step"><h3>Discuss</h3><p>You tell me your goals, audience, and budget. I send a quote and timeline.</p></div>
+      <div class="step"><h3>Design</h3><p>I share a layout for your approval before any code is written.</p></div>
+      <div class="step"><h3>Build</h3><p>I develop your site and send you a private preview link to review.</p></div>
+      <div class="step"><h3>Launch</h3><p>I test everything, publish the site, and train you to manage it.</p></div>
+      <div class="step"><h3>Support</h3><p>I stay available for updates, fixes, and new features.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2>Recent work</h2>
+    <p class="lead">Replace these samples with your real projects, screenshots, and links.</p>
+    <div class="work">
+      <article class="proj"><div class="thumb t1">Restaurant site</div><div class="i"><h3>Online menu and booking</h3><p>Redesigned a local restaurant's site. Table bookings went up after launch.</p><div class="tags"><span>HTML/CSS</span><span>JavaScript</span><span>SEO</span></div></div></article>
+      <article class="proj"><div class="thumb t2">Fashion store</div><div class="i"><h3>E-commerce store</h3><p>Built a store with 200+ products, secure checkout, and order tracking.</p><div class="tags"><span>React</span><span>Node.js</span><span>Payments</span></div></div></article>
+      <article class="proj"><div class="thumb t3">Clinic portal</div><div class="i"><h3>Appointment system</h3><p>A patient portal with online appointments and automatic reminders.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>Admin panel</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p class="lead">Hi, I'm Your Name. I help small businesses and startups get a professional presence online. I focus on clean code, honest communication, and delivering on time.</p>
+      <p class="lead" style="margin-top:14px">Every site I build is responsive, secure, and set up so Google can find it.</p>
+    </div>
+    <div>
+      <h3>Tools I use</h3>
+      <div class="skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>PHP</span><span>WordPress</span><span>MySQL</span><span>Git</span><span>Figma</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap contact">
+    <div class="info">
+      <h2>Let's talk about your project</h2>
+      <p>Fill in the form and I'll reply within 24 hours with questions and a free quote.</p>
+      <p>Email<br><a id="emailLink" href="#">hello@yourdomain.com</a></p>
+      <p>WhatsApp<br><a id="waLink" href="#">+92 300 0000000</a></p>
+    </div>
+    <form id="form" novalidate>
+      <div class="row">
+        <div><label for="name">Full name</label><input id="name" required autocomplete="name"></div>
+        <div><label for="email">Email</label><input id="email" type="email" required autocomplete="email"></div>
+      </div>
+      <fieldset>
+        <legend>Services you want</legend>
+        <div class="checks" id="services-list"></div>
+      </fieldset>
+      <div class="row">
+        <div><label for="budget">Budget</label>
+          <select id="budget"><option>Not sure yet</option><option>Under $300</option><option>$300 – $1,000</option><option>$1,000 – $3,000</option><option>$3,000+</option></select></div>
+        <div><label for="time">Timeline</label>
+          <select id="time"><option>Flexible</option><option>Within 2 weeks</option><option>Within 1 month</option><option>1–3 months</option></select></div>
+      </div>
+      <div><label for="details">Project details</label><textarea id="details" placeholder="Tell me about your business and what you need."></textarea></div>
+      <div id="msg" class="msg" role="status"></div>
+      <div class="actions">
+        <button class="btn" type="submit" value="email">Send by email</button>
+        <button class="btn ghost" type="submit" value="whatsapp">Send on WhatsApp</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Your Name. All rights reserved.</span><span>Web development services</span></div></footer>
+
+<script>
+// ✏️ EDIT THESE DETAILS
+const CONFIG = { name: "Your Name", email: "hello@yourdomain.com", whatsapp: "923000000000" /* country code + number, no + or spaces */ };
+
+const SERVICES = ["Business website","Online store (E-commerce)","Custom web app","UI/UX design","SEO and speed optimization","Maintenance and support"];
+const $ = id => document.getElementById(id);
+$("yr").textContent = new Date().getFullYear();
+$("emailLink").href = "mailto:" + CONFIG.email; $("emailLink").textContent = CONFIG.email;
+$("waLink").href = "https://wa.me/" + CONFIG.whatsapp; $("waLink").textContent = "+" + CONFIG.whatsapp;
+
+$("services-list").innerHTML = SERVICES.map(s => `<label><input type="checkbox" value="${s}"> ${s}</label>`).join("");
+
+document.querySelectorAll(".enroll").forEach(b => b.addEventListener("click", () => {
+  const box = [...document.querySelectorAll("#services-list input")].find(i => i.value === b.dataset.service);
+  if (box) box.checked = true;
+  $("contact").scrollIntoView({behavior:"smooth"});
+  setTimeout(() => $("name").focus({preventScroll:true}), 500);
+}));
+
+function show(text, ok){ const m = $("msg"); m.textContent = text; m.className = "msg " + (ok ? "ok" : "err"); }
+
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("name").value.trim(), email = $("email").value.trim();
+  const picked = [...document.querySelectorAll("#services-list input:checked")].map(i => i.value);
+  if (!name) return show("Please enter your name.", false);
+  if (!/^\S+@\S+\.\S+$/.test(email)) return show("Please enter a valid email address.", false);
+  if (!picked.length) return show("Please choose at least one service.", false);
+
+  const body = `Hi ${CONFIG.name},\n\nName: ${name}\nEmail: ${email}\nServices: ${picked.join(", ")}\nBudget: ${$("budget").value}\nTimeline: ${$("time").value}\n\nDetails:\n${$("details").value.trim() || "-"}`;
+  if (e.submitter && e.submitter.value === "whatsapp") {
+    window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(body), "_blank");
+  } else {
+    location.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("New project enquiry from " + name) + "&body=" + encodeURIComponent(body);
+  }
+  show("Your message is ready. Send it in the app that just opened and I'll reply within 24 hours.", true);
+});
+</script>
+</body>
+</html>
