@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <meta name="google-site-verification" content="k2Kxqb2rJxz_LcsAXOEJPvqlB-C6HDSbH_XGxgNJiyg" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Haroon – Freelance Web Developer</title>
-<meta name="description" content="Freelance web developer building fast, mobile-friendly websites and web apps for businesses. Get a free quote.">
+<title>Haroon.dev – Freelance Web Developer for Restaurants, Stores &amp; Clinics</title>
+<meta name="description" content="Haroon is a freelance web developer building fast, mobile-friendly websites for restaurants, clothing stores, clinics and small businesses. Prices in PKR and USD. Get a free quote.">
+<!-- GOOGLE SEARCH CONSOLE: paste your existing <meta name="google-site-verification" content="..."> tag on the next line, then delete this comment -->
+<meta name="google-site-verification" content="k2Kxqb2rJxz_LcsAXOEJPvqlB-C6HDSbH_XGxgNJiyg" />
+<meta name="theme-color" content="#2F5BFF">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Haroon.dev – Freelance Web Developer">
+<meta property="og:description" content="Fast, mobile-friendly websites for restaurants, clothing stores, clinics and small businesses. See the demo projects and get a free quote.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F5BFF'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Haroon","jobTitle":"Freelance Web Developer","email":"mailto:haroonworld1290@gmail.com","telephone":"+923267317291","knowsAbout":["Web development","Website design","Search engine optimization"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -139,6 +148,37 @@ fieldset{border:0;padding:0}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* premium upgrade */
+h1 em{font-style:normal;color:var(--brand)}
+.hero{position:relative;overflow:hidden;padding:92px 0 72px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 60% at 85% 0%,color-mix(in srgb,var(--brand) 24%,transparent),transparent 70%),radial-gradient(40% 40% at 0% 100%,color-mix(in srgb,var(--ok) 14%,transparent),transparent 70%)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin-top:34px}
+.chips li{font-size:.92rem;font-weight:500;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--surface)}
+.chips li::before{content:"✓ ";color:var(--ok);font-weight:700}
+.card,.plan,.proj{transition:transform .2s,box-shadow .2s}
+.card:hover,.plan:hover,.proj:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(18,32,47,.4)}
+.acts{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.acts .btn{margin:0}
+.demo-badge{display:inline-block;font-size:.78rem;font-weight:600;background:#FFF1C9;color:#6B4A00;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.thumb{position:relative;font-size:1.4rem}
+.thumb b{font-size:3.4rem;display:block;text-align:center;line-height:1}
+.thumb span{display:block;text-align:center;margin-top:8px}
+.t1{background:linear-gradient(135deg,#C2410C,#7C2D12)}.t2{background:linear-gradient(135deg,#111827,#4B5563)}.t3{background:linear-gradient(135deg,#0E9F8E,#075E54)}
+.proj .btn{margin-top:16px}
+.expect{list-style:none;padding:0;margin-top:14px}
+.expect li{padding:12px 0 12px 28px;border-bottom:1px solid var(--line);position:relative}
+.expect li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.menu{display:none;background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:9px;padding:7px 12px;font:600 .95rem var(--body);cursor:pointer}
+.honest{margin-top:26px;padding:14px 18px;border-left:4px solid var(--brand);background:var(--soft);border-radius:8px;font-size:.96rem}
+@media(max-width:760px){
+  .menu{display:inline-flex;margin-left:auto}
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 20px}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  section{padding:60px 0}
+}
 </style>
 </head>
 <body>
@@ -146,12 +186,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top">Haroon<span>.dev</span></a>
-    <nav aria-label="Main"><ul>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="menuList">Menu</button>
+    <nav aria-label="Main"><ul id="menuList">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#work">Portfolio</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul></nav>
     <a class="btn small" href="#contact">Get a free quote</a>
   </div>
@@ -161,26 +203,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="status"><i></i> Taking new projects this month</div>
-      <h1>Websites that load fast, look sharp, and bring in customers.</h1>
-      <p>I'm a freelance web developer. I design and build business websites, online stores, and web apps – from first sketch to launch and ongoing support.</p>
+      <div class="status"><i></i> Freelance web developer</div>
+      <h1>Premium websites for <em>restaurants</em>, <em>stores</em> and <em>clinics</em>.</h1>
+      <p>I'm Haroon. I build fast, mobile-friendly websites that look professional and make it easy for your customers to order, book, or contact you.</p>
       <div class="cta">
-        <a class="btn" href="#contact">Start your project</a>
-        <a class="btn ghost" href="#services">See services</a>
+        <a class="btn" href="#contact">Get a free quote</a>
+        <a class="btn ghost" href="#work">View demo projects</a>
       </div>
-      <div class="proof">
-        <div><b>50+</b><span>Projects delivered</span></div>
-        <div><b>5 yrs</b><span>Professional experience</span></div>
-        <div><b>24 h</b><span>Reply time</span></div>
-      </div>
+      <ul class="chips"><li>Mobile-first design</li><li>SEO-ready pages</li><li>Prices in PKR and USD</li><li>Free quote</li></ul>
     </div>
     <div class="browser" aria-hidden="true">
-      <div class="bar"><i></i><i></i><i></i><em>yourclient.com</em></div>
+      <div class="bar"><i></i><i></i><i></i><em>yourbusiness.com</em></div>
       <div class="screen">
         <div class="sk h"></div><div class="sk" style="width:90%"></div><div class="sk" style="width:60%"></div><div class="sk b"></div>
         <div class="tiles"><div></div><div></div><div></div></div>
       </div>
-      <div class="code"><span class="k">const</span> site = {<br>&nbsp;&nbsp;speed: <span class="s">"under 2 seconds"</span>,<br>&nbsp;&nbsp;mobile: <span class="s">"fully responsive"</span>,<br>&nbsp;&nbsp;seo: <span class="s">"built in"</span><br>};</div>
+      <div class="code"><span class="k">const</span> yourSite = {<br>&nbsp;&nbsp;mobile: <span class="s">"fully responsive"</span>,<br>&nbsp;&nbsp;contact: <span class="s">"email + WhatsApp"</span>,<br>&nbsp;&nbsp;seo: <span class="s">"built in"</span><br>};</div>
     </div>
   </div>
 </section>
@@ -188,27 +226,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section id="services" class="alt">
   <div class="wrap">
     <h2>Services</h2>
-    <p class="lead">Pick what you need. Each service can be ordered alone or combined into one package.</p>
-    <div class="grid3">
-      <article class="card"><h3>Business website</h3><p>A clean, professional site that explains what you do and makes it easy to contact you.</p>
-        <ul><li>Up to 6 pages</li><li>Mobile friendly</li><li>Contact form and map</li></ul>
-        <button class="btn small enroll" data-service="Business website">Enroll in this service</button></article>
-      <article class="card"><h3>Online store</h3><p>Sell products online with a secure checkout and an easy way to manage orders.</p>
-        <ul><li>Product catalog and cart</li><li>Payment setup</li><li>Order management</li></ul>
-        <button class="btn small enroll" data-service="Online store (E-commerce)">Enroll in this service</button></article>
-      <article class="card"><h3>Web app development</h3><p>Custom dashboards, booking systems, portals, and tools built around your workflow.</p>
-        <ul><li>Login and user roles</li><li>Database and admin panel</li><li>API connections</li></ul>
-        <button class="btn small enroll" data-service="Custom web app">Enroll in this service</button></article>
-      <article class="card"><h3>UI/UX design</h3><p>Layouts and visual design that guide visitors toward the action you want them to take.</p>
-        <ul><li>Wireframes and mockups</li><li>Brand-matched styling</li><li>Mobile-first layouts</li></ul>
-        <button class="btn small enroll" data-service="UI/UX design">Enroll in this service</button></article>
-      <article class="card"><h3>SEO and speed</h3><p>Help people find your site on Google, and make sure it loads quickly once they do.</p>
-        <ul><li>Speed audit and fixes</li><li>On-page SEO</li><li>Analytics setup</li></ul>
-        <button class="btn small enroll" data-service="SEO and speed optimization">Enroll in this service</button></article>
-      <article class="card"><h3>Maintenance and support</h3><p>Keep your site updated, backed up, and secure so you can focus on your business.</p>
-        <ul><li>Monthly updates</li><li>Backups and security</li><li>Fast bug fixes</li></ul>
-        <button class="btn small enroll" data-service="Maintenance and support">Enroll in this service</button></article>
-    </div>
+    <p class="lead">Websites built for the way your type of business works. Choose a service and send me the details for a free quote.</p>
+    <div class="grid3"><article class="card"><h3>Business websites</h3><p>A clear, professional website that explains what you do and makes it easy for customers to contact you.</p><ul><li>Up to 8 pages</li><li>Contact form, email and WhatsApp buttons</li><li>Google Maps link and basic SEO</li></ul><div class="acts"><button class="btn small enroll" data-service="Business website">Enroll in this service</button></div></article><article class="card"><h3>Restaurant websites</h3><p>Show your menu, build trust with photos, and let guests send a reservation request.</p><ul><li>Menu with categories</li><li>Reservation request form</li><li>Order by WhatsApp option</li></ul><div class="acts"><button class="btn small enroll" data-service="Restaurant website">Enroll in this service</button><a class="btn ghost small" href="demos/tastebite.html">View demo</a></div></article><article class="card"><h3>Clothing store websites</h3><p>A clean product catalog with sizes, categories and a simple cart for taking orders.</p><ul><li>Product grid and filters</li><li>Cart and size selection</li><li>Orders by WhatsApp or email</li></ul><div class="acts"><button class="btn small enroll" data-service="Clothing store website">Enroll in this service</button><a class="btn ghost small" href="demos/urbanwear.html">View demo</a></div></article><article class="card"><h3>Clinic websites</h3><p>Help patients find your services, doctors and timings, and request an appointment.</p><ul><li>Services and doctor pages</li><li>Appointment request form</li><li>Timings and location</li></ul><div class="acts"><button class="btn small enroll" data-service="Clinic website">Enroll in this service</button><a class="btn ghost small" href="demos/careplus.html">View demo</a></div></article><article class="card"><h3>Landing pages</h3><p>One focused page for a single offer, event or campaign, built to get enquiries.</p><ul><li>Single-page design</li><li>Strong call-to-action</li><li>Fast loading</li></ul><div class="acts"><button class="btn small enroll" data-service="Landing page">Enroll in this service</button></div></article></div>
   </div>
 </section>
 
@@ -228,13 +247,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="work" class="alt">
   <div class="wrap">
-    <h2>Recent work</h2>
-    <p class="lead">Replace these samples with your real projects, screenshots, and links.</p>
-    <div class="work">
-      <article class="proj"><div class="thumb t1">Restaurant site</div><div class="i"><h3>Online menu and booking</h3><p>Redesigned a local restaurant's site. Table bookings went up after launch.</p><div class="tags"><span>HTML/CSS</span><span>JavaScript</span><span>SEO</span></div></div></article>
-      <article class="proj"><div class="thumb t2">Fashion store</div><div class="i"><h3>E-commerce store</h3><p>Built a store with 200+ products, secure checkout, and order tracking.</p><div class="tags"><span>React</span><span>Node.js</span><span>Payments</span></div></div></article>
-      <article class="proj"><div class="thumb t3">Clinic portal</div><div class="i"><h3>Appointment system</h3><p>A patient portal with online appointments and automatic reminders.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>Admin panel</span></div></div></article>
-    </div>
+    <h2>Portfolio: demo projects</h2>
+    <p class="lead">These three websites are demo projects I designed to show my style and what your site could look like. The businesses are fictional and none of them is real client work.</p>
+    <div class="work"><article class="proj"><div class="thumb t1"><div><b>🍽️</b><span>TasteBite Restaurant</span></div></div><div class="i"><span class="demo-badge">Demo project – not real client work</span><h3>Restaurant website</h3><p>A sample site with a filterable menu, an order list that adds up the total, and a table reservation form.</p><div class="tags"><span>Menu filter</span><span>Order total</span><span>Reservation form</span></div><a class="btn small" href="demos/tastebite.html">Open live demo</a></div></article><article class="proj"><div class="thumb t2"><div><b>👕</b><span>UrbanWear Fashion</span></div></div><div class="i"><span class="demo-badge">Demo project – not real client work</span><h3>Clothing store website</h3><p>A sample store with category filters, size selection and a working cart.</p><div class="tags"><span>Product filter</span><span>Sizes</span><span>Cart</span></div><a class="btn small" href="demos/urbanwear.html">Open live demo</a></div></article><article class="proj"><div class="thumb t3"><div><b>🩺</b><span>CarePlus Medical Clinic</span></div></div><div class="i"><span class="demo-badge">Demo project – not real client work</span><h3>Clinic website</h3><p>A sample clinic site with services, doctor profiles, timings and an appointment request form.</p><div class="tags"><span>Services</span><span>Doctors</span><span>Appointment form</span></div><a class="btn small" href="demos/careplus.html">Open live demo</a></div></article></div>
+    <p class="honest">Demo forms and carts work on the page but send nothing and take no payment. Real client projects will be added here once they are completed with permission.</p>
   </div>
 </section>
 
@@ -248,14 +264,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     </div>
     <div class="plans">
       <article class="plan"><h3>Starter</h3><div class="price" data-pkr="30000" data-usd="110"></div><div class="sub">One-time payment</div>
-        <ul><li>One-page or 3-page website</li><li>Mobile responsive design</li><li>Contact form</li><li>Basic SEO setup</li><li>7 days delivery</li></ul>
-        <button class="btn ghost enroll" data-service="Business website" data-plan="Starter">Choose Starter</button></article>
+        <ul><li>Landing page or up to 3 pages</li><li>Mobile responsive design</li><li>Contact form</li><li>Basic SEO setup</li><li>7 days delivery</li></ul>
+        <button class="btn ghost enroll" data-service="Landing page" data-plan="Starter">Choose Starter</button></article>
       <article class="plan pop"><span class="badge">Most popular</span><h3>Business</h3><div class="price" data-pkr="85000" data-usd="300"></div><div class="sub">One-time payment</div>
         <ul><li>Up to 8 pages</li><li>Custom design</li><li>Speed and SEO optimization</li><li>WhatsApp and map integration</li><li>1 month free support</li><li>14 days delivery</li></ul>
         <button class="btn enroll" data-service="Business website" data-plan="Business">Choose Business</button></article>
       <article class="plan"><h3>Premium</h3><div class="price" data-pkr="200000" data-usd="700"></div><div class="sub">Starting price</div>
-        <ul><li>Online store or custom web app</li><li>Login, admin panel, database</li><li>Payment gateway setup</li><li>Advanced SEO and analytics</li><li>3 months free support</li><li>30+ days delivery</li></ul>
-        <button class="btn ghost enroll" data-service="Online store (E-commerce)" data-plan="Premium">Choose Premium</button></article>
+        <ul><li>Online store or larger custom website</li><li>Product catalog and cart</li><li>Orders by WhatsApp or email</li><li>Advanced SEO setup</li><li>3 months free support</li><li>30+ days delivery</li></ul>
+        <button class="btn ghost enroll" data-service="Clothing store website" data-plan="Premium">Choose Premium</button></article>
     </div>
     <p class="note">Maintenance and support: <b class="mp" data-pkr="8000" data-usd="30"></b> per month. Final price depends on your exact requirements – send your details for a free quote. Payment: 50% to start, 50% on delivery.</p>
   </div>
@@ -265,12 +281,18 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <div class="wrap about">
     <div>
       <h2>About me</h2>
-      <p class="lead">Hi, I'm Haroon. I help small businesses and startups get a professional presence online. I focus on clean code, honest communication, and delivering on time.</p>
-      <p class="lead" style="margin-top:14px">Every site I build is responsive, secure, and set up so Google can find it.</p>
+      <p class="lead">I'm Haroon, a freelance web developer. I build clean, fast, mobile-friendly websites for small businesses that want a professional presence online.</p>
+      <p class="lead" style="margin-top:14px">I'm building my portfolio with demo projects so you can see my design style and how a site for your kind of business could work before we start.</p>
+      <div class="skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git and GitHub</span></div>
     </div>
     <div>
-      <h3>Tools I use</h3>
-      <div class="skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>PHP</span><span>WordPress</span><span>MySQL</span><span>Git</span><span>Figma</span></div>
+      <h3>What you can expect</h3>
+      <ul class="expect">
+        <li>A clear quote before any work starts</li>
+        <li>A design preview for your approval</li>
+        <li>Direct contact with me by email or WhatsApp</li>
+        <li>A layout that works on phones, tablets and computers</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -279,7 +301,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <div class="wrap contact">
     <div class="info">
       <h2>Let's talk about your project</h2>
-      <p>Fill in the form and I'll reply within 24 hours with questions and a free quote.</p>
+      <p>Fill in the form and I'll get back to you with a few questions and a free quote.</p>
       <p>Email<br><a id="emailLink" href="#">haroonworld1290@gmail.com</a></p>
       <p>WhatsApp<br><a id="waLink" href="#">0326 7317291</a></p>
     </div>
@@ -309,14 +331,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> Haroon. All rights reserved.</span><span>Web development services</span></div></footer>
+<footer><div class="wrap"><span>© <span id="yr"></span> Haroon. All rights reserved.</span><span><a href="demos/tastebite.html">TasteBite demo</a> · <a href="demos/urbanwear.html">UrbanWear demo</a> · <a href="demos/careplus.html">CarePlus demo</a></span></div></footer>
 
 <script>
 // ✏️ EDIT THESE DETAILS
 const CONFIG = { name: "Haroon", email: "haroonworld1290@gmail.com", whatsapp: "923267317291" /* country code + number, no + or spaces */, phone: "0326 7317291" };
 
-const SERVICES = ["Business website","Online store (E-commerce)","Custom web app","UI/UX design","SEO and speed optimization","Maintenance and support"];
+const SERVICES = ["Business website","Restaurant website","Clothing store website","Clinic website","Landing page","Other / not sure"];
 const $ = id => document.getElementById(id);
+const mb=$("menuBtn"),ml=$("menuList");
+mb.addEventListener("click",()=>{const o=ml.classList.toggle("open");mb.setAttribute("aria-expanded",o)});
+ml.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ml.classList.remove("open");mb.setAttribute("aria-expanded","false")}));
 $("yr").textContent = new Date().getFullYear();
 $("emailLink").href = "mailto:" + CONFIG.email; $("emailLink").textContent = CONFIG.email;
 $("waLink").href = "https://wa.me/" + CONFIG.whatsapp; $("waLink").textContent = CONFIG.phone;
@@ -358,7 +383,7 @@ $("form").addEventListener("submit", e => {
   } else {
     location.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("New project enquiry from " + name) + "&body=" + encodeURIComponent(body);
   }
-  show("Your message is ready. Send it in the app that just opened and I'll reply within 24 hours.", true);
+  show("Your message is ready. Send it in the app that just opened and I'll get back to you soon.", true);
 });
 </script>
 </body>
